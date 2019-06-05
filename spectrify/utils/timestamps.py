@@ -33,6 +33,8 @@ def iso8601_to_nanos(date_str):
 
 
 def iso8601_to_days_since_epoch(date_str):
+    if date_str[0] == '-':
+        date_str = date_str[1:]
     idx = date_str.find('-')
     if idx < 4:
         date_str = '0' * (4 - idx) + date_str
